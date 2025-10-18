@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
-  { id: "home", emoji: "🏠", label: "Home", href: "#home" },
-  { id: "stories", emoji: "📖", label: "Stories", href: "#stories" },
-  { id: "cats", emoji: "📚", label: "Categories", href: "#categories" },
-  { id: "desires", emoji: "💖", label: "Desires", href: "#desires" },
-  { id: "about", emoji: "👁️", label: "About", href: "#about" },
-  { id: "contact", emoji: "📞", label: "Contact", href: "#contact" },
+  { id: "home", img: "/love-and-romance.png", label: "Home", href: "#home" },
+  { id: "stories", img: "/erotic (1).png", label: "Stories", href: "#stories" },
+  { id: "cats", img: "/classification.png", label: "Categories", href: "#categories" },
+  { id: "desires", img: "/erotic.png", label: "Desires", href: "#desires" },
+  { id: "about", img: "/sexy.png", label: "About", href: "#about" },
+  { id: "contact", img: "/sex-education.png", label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -68,7 +68,7 @@ export default function Navbar() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full blur-sm opacity-70 bg-gradient-to-r from-[#ff0080] to-[#ff4da6] group-hover:opacity-100 transition-opacity duration-300"></div>
               <img
-                src="/lusty laughs.jpeg"
+                src="https://i.postimg.cc/4xc0g9GR/lusty-laughs.jpg"
                 alt="Lusty Laughs"
                 className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#ff0080] shadow-[0_8px_30px_rgba(255,0,127,0.4)] group-hover:scale-105 group-hover:shadow-[0_12px_40px_rgba(255,0,127,0.6)] transition-all duration-300"
               />
