@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
-  { id: "home", img: "/love-and-romance.png", label: "Home", href: "#home" },
-  { id: "stories", img: "/erotic (1).png", label: "Stories", href: "#stories" },
-  { id: "cats", img: "/classification.png", label: "Categories", href: "#categories" },
-  { id: "desires", img: "/erotic.png", label: "Desires", href: "#desires" },
-  { id: "about", img: "/sexy.png", label: "About", href: "#about" },
-  { id: "contact", img: "/sex-education.png", label: "Contact", href: "#contact" },
+  { id: "home", img: "https://i.postimg.cc/J4NTYW54/love-and-romance.png", label: "Home", href: "#home" },
+  { id: "stories", img: "https://i.postimg.cc/BbcxpJff/erotic-1.png", label: "Stories", href: "#stories" },
+  { id: "cats", img: "https://i.postimg.cc/R06K87xp/classification.png", label: "Categories", href: "#categories" },
+  { id: "desires", img: "https://i.postimg.cc/nc3mhRHP/erotic.png", label: "Desires", href: "#desires" },
+  { id: "about", img: "https://i.postimg.cc/6qY8TqNx/sexy.png", label: "About", href: "#about" },
+  { id: "contact", img: "https://i.postimg.cc/sgBMD3Hv/sex-education.png", label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {

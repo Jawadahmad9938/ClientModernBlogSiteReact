@@ -53,7 +53,7 @@ const Hero = () => {
             
             <span className="relative z-10 text-lg tracking-widest flex items-center gap-3">
               <img 
-                src="fire.png" 
+                src="https://i.postimg.cc/QCyjRT3d/fire.png" 
                 alt="Stories" 
                 className="w-6 h-6 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform duration-300"
               />
@@ -64,7 +64,7 @@ const Hero = () => {
           <button className="group px-8 py-4 sm:px-12 sm:py-5 bg-transparent text-[#ffb3d9] font-bold rounded-2xl border-2 border-[#ff0080]/50 hover:border-[#ff0080] hover:bg-[#ff0080]/10 transform hover:scale-105 transition-all duration-300">
             <span className="flex items-center gap-3">
               <img 
-                src="community.png" 
+                src="https://i.postimg.cc/MGmqz4w6/community.png" 
                 alt="Community" 
                 className="w-6 h-6 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
               />
@@ -76,10 +76,10 @@ const Hero = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
           {[
-            { number: "500+", label: "Erotic Stories", img: "stories.png" },
-            { number: "50K+", label: "Happy Readers", img: "readers.png" },
-            { number: "24/7", label: "New Content", img: "content.png" },
-            { number: "100%", label: "Discreet", img: "discrete.png" }
+            { number: "500+", label: "Erotic Stories", img: "https://i.postimg.cc/gkLpxrpD/stories.png" },
+            { number: "50K+", label: "Happy Readers", img: "https://i.postimg.cc/rsvv1CTS/readers.png" },
+            { number: "24/7", label: "New Content", img: "https://i.postimg.cc/TPRBJP8T/content.png" },
+            { number: "100%", label: "Discreet", img: "https://i.postimg.cc/Hn7NkcMW/discrete.png" }
           ].map((stat, index) => (
             <div key={index} className="text-center group">
               <div className="flex justify-center mb-2 transform group-hover:scale-110 transition-transform duration-300">
