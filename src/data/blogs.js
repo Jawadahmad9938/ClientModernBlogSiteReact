@@ -1,32 +1,82 @@
 export const blogs = [
   {
     id: 1,
-    slug: "the-midnight-seduction",
-    title: "The Midnight Seduction",
-    excerpt: "A passionate encounter that begins with whispered secrets and ends with tangled sheets under the moonlight...",
+    slug: "the-campus-queen",
+    title: "The Campus Queen 👑",
+    excerpt: "From a modest town near Lucknow to the political battlegrounds of Delhi University - a story of power, ambition, and dangerous attractions where politics meets desire...",
     content: `
-      <p class="mb-4">The city slept, but we were wide awake. Under the pale moonlight, our secrets unfolded like petals in the dark.</p>
+      <p class="mb-4">The crowd at Delhi University had seen many faces come and go - leaders, rebels, dreamers - but no one quite like Suchi Goyal. Coming from a modest town near Lucknow, I had finished my Bachelor's there with top honours, yet it wasn't grades that defined me - it was the spark in my voice whenever politics was mentioned.</p>
       
-      <p class="mb-4">His fingers traced patterns on my skin, each touch sending shivers down my spine. "Tell me what you want," he whispered, his breath warm against my ear.</p>
+      <p class="mb-4">For me, power wasn't about speeches; it was about presence. When I stepped onto the campus of Delhi University for my master's degree, I knew I wasn't here just to study. Politics had fascinated me ever since my bachelor's days in Lucknow University - the speeches, the rallies, the way a single sentence could move a crowd. I wanted that power. DU was the biggest stage in the country for students like me, and I was ready for it.</p>
       
-      <p class="mb-6">And in that moment, all barriers fell. The world outside ceased to exist as we explored each other in the intimate darkness...</p>
+      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The Political Landscape</h3>
+      <p class="mb-4">For years, Jan Niti Sangh (JNS) ruled our university. Their leader, Saleem Ali, had been president twice - loud, fearless, and impossible to ignore. He couldn't contest again, but his people still moved like soldiers obeying his unseen orders.</p>
       
-      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The First Touch</h3>
-      <p class="mb-4">It started with a glance across the crowded room. Then a touch that lingered too long. Now here we were, wrapped in silk sheets with only the moon as our witness.</p>
+      <p class="mb-4">On the other side was Nav Vikalp Parishad (NVP), a tired opposition that hadn't won in ages. Their senior face, Rohit Verma had become more of a survivor than a leader. Still, he never gave up. And apparently, he noticed me.</p>
       
-      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">Whispered Promises</h3>
-      <p class="mb-4">"I've wanted this since the moment I saw you," he confessed, his lips trailing down my neck. Every word was a promise, every touch a commitment to the passion we shared.</p>
+      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The Dance That Changed Everything</h3>
+      <p class="mb-4">The fresher's dance fest was the most awaited event on campus. After three months of hard work, I had made my mark. Tonight, I was not just a volunteer - I was also to perform a dance that would show everyone the confidence and grace I carried inside me.</p>
+      
+      <p class="mb-4">The music thrummed through the hall as I took the stage. My dance was a mix of confidence and fire, every movement crafted to show control and power. I wasn't just performing - I was sending a message. The crowd's eyes were on me, but I sought only one gaze - Arjun Rampal's, sharp and intense from the sidelines.</p>
+      
+      <p class="mb-4">When I finished, applause filled the room, but his voice was the only one I heard, quiet yet commanding: "Wah, Suchi. Tum sacchi mein alag ho."</p>
+      
+      <p class="mb-4">As I stepped down, he approached quickly and pulled me into a hug. His hands slid to my hips, holding me firmly enough to let me feel his strength but gently so I didn't pull away.</p>
       
       <div class="bg-gradient-to-r from-[#ff0080]/10 to-[#ff4da6]/10 p-6 rounded-xl border border-[#ff0080]/20 mt-6">
-        <p class="text-[#ffb3d9] italic">"Some desires are too powerful to ignore, too intense to forget..."</p>
+        <p class="text-[#ffb3d9] italic">"Tumhari energy hi tumhari strength hai, Suchi," he whispered in my ear, his breath warm against my skin. I didn't pull away. Instead, I leaned in slightly, meeting his gaze.</p>
+      </div>
+      
+      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The Political Proposition</h3>
+      <p class="mb-4">The morning after the fresher's fest, Arjun Rampal sat in his office, looking over the city through large glass windows. His mind wasn't on the view - it was on me.</p>
+      
+      <p class="mb-4">"Rohit," he said firmly into the phone, "Suchi ko humare saath lana zaroori hai. Uski alag style aur taqat dono mil kar humari game badal sakti hai."</p>
+      
+      <p class="mb-4">Rohit met me at the café, his eyes holding a different kind of sparkle. "Suchi," he said with a smile, "Rampal sir ne kaha hai ki tumhari potential humare liye bahut khaas hai. Hum tumhe poora support dena chahte hain."</p>
+      
+      <p class="mb-4">I picked up my tea glass, teasing slightly, "Star? Matlab mujhe spot light chahiye ya support?"</p>
+      
+      <p class="mb-4">He leaned toward me with a subtle smile, "Don't worry, dono milenge. Tumhara stage bada hoga, aur tumhare saath hum bhi."</p>
+      
+      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The Dangerous Alliance</h3>
+      <p class="mb-4">After considering Rohit's offer carefully, I decided to accept it. This was the opportunity I had been preparing for, and I could feel the weight of the game growing heavier, but it was a challenge I was ready to face.</p>
+      
+      <p class="mb-4">When I told Rohit, he smiled in a way that mixed relief with something sharper – anticipation. As we hugged, the moment became charged; I let my fingers linger just a little longer on his back, teasing silently, making sure he knew I was aware of the power I held even in this quiet moment.</p>
+      
+      <p class="mb-4">"Ab tum meri team ka hissa ho," I whispered playfully, pulling back with a knowing smile that made his eyes darken briefly in surprise.</p>
+      
+      <h3 class="text-2xl font-bold text-[#ff4da6] mb-3">The Final Confrontation</h3>
+      <p class="mb-4">After the meeting with Rohit, I found myself drawn to Rampal's sleek office once again. The city noises faded behind the heavy glass as I stepped inside. Rampal was already there, leaning casually against the window frame, his eyes immediately locking onto mine.</p>
+      
+      <p class="mb-4">"Suchi," he said, voice low and smoky, "maine tumhe dekha Rohit ke saath. Kya tum sach mein tayaar ho?"</p>
+      
+      <p class="mb-4">I stepped forward, letting my fingers trail lightly along his arm - a silent probe masked as friendliness. "Main toh hamesha tayaar hoon, Rampal sahab. Par yeh aapka plan kya hai?"</p>
+      
+      <p class="mb-4">He smiled slow, deliberate and closed the small gap between us until I could feel the warmth of his breath. His hand rested on my waist, fingers pressing just enough to claim but not control.</p>
+      
+      <p class="mb-4">"Yeh sirf politics nahi, yeh ek khel hai. Aur main tumhe sirf partner nahi, apni sabse badi taqat banana chahta hoon."</p>
+      
+      <div class="bg-gradient-to-r from-[#ff0080]/10 to-[#ff4da6]/10 p-6 rounded-xl border border-[#ff0080]/20 mt-6">
+        <p class="text-[#ffb3d9] italic">"Mujhe pata hai tum jaisi ladki ke paas sirf shabdon se zyada taqat hoti hai. Tumhara husn, tumhara andaaz sab hamara raasta asaan karte hain."</p>
+      </div>
+      
+      <p class="mb-4">I let the words sink in while arching slightly, closing the distance. "Aur main chahti hoon ki tum jaano yeh taqat kabhi kabhi khatra bhi hoti hai."</p>
+      
+      <p class="mb-4">Rampal's fingers slid along my hip, pulling me just a fraction closer, his voice a murmur now. "Main woh khatra lena chahta hoon. Kya tum meri side ho, Suchi?"</p>
+      
+      <p class="mb-6">I smiled, lips close enough to brush his. "Side nahi, main tumhara raaj chalane wali hoon."</p>
+      
+      <div class="bg-gradient-to-r from-[#ff0080]/20 to-[#ff4da6]/20 p-8 rounded-xl border border-[#ff0080]/30 mt-8 text-center">
+        <p class="text-2xl font-bold text-[#ffb3d9] mb-2">THE END</p>
+        <p class="text-[#ffb3d9]">The space between them was electric, a silent promise of power, control, and something dangerously close to desire, setting the stage for what was to come.</p>
       </div>
     `,
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-    category: "Erotic Romance",
-    readTime: "15 min",
-    rating: "4.8",
-    tags: ["Forbidden", "Slow Burn", "Intimate"],
-    author: "Elena Rose",
+    image: "https://i.postimg.cc/QdNSjZ02/565696267-1499082547806549-6061296369666840500-n.jpg",
+    category: "Campus Politics",
+    readTime: "18 min",
+    rating: "4.9",
+    tags: ["Power Play", "Campus Romance", "Political Drama", "Ambition", "Seduction"],
+    author: "Suchi Goyal",
     publishedDate: "2024-01-15",
     featured: true
   },

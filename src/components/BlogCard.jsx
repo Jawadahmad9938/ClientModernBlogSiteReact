@@ -5,15 +5,37 @@ import { useNavigate } from "react-router-dom";
 const BlogGrid = () => {
   const navigate = useNavigate();
 
+  // 🔥 Function to trigger Ad + Navigate
   const handleReadMore = (slug) => {
-    navigate(`/blog/${slug}`);
+    try {
+      // 1️⃣ Try to trigger Adsterra popunder (if network script is available)
+      if (window._pop && typeof window._pop.pop === "function") {
+        window._pop.pop();
+      } else {
+        // 2️⃣ Fallback - manually open popunder ad URL
+        window.open(
+          "https://www.effectivegatecpm.com/fqkbtd9n5?key=2705e697c48d931fdb97a246b96903aa",
+          "_blank"
+        );
+      }
+    } catch (err) {
+      console.warn("⚠️ Ad trigger failed:", err);
+    }
+
+    // 3️⃣ Smooth navigation to blog post (after small delay)
+    setTimeout(() => {
+      navigate(`/blog/${slug}`);
+    }, 700);
   };
 
   return (
-    <div className="relative bg-gradient-to-b from-[#1a001a] to-[#0a0014] py-20" id="stories">
+    <div
+      className="relative bg-gradient-to-b from-[#1a001a] to-[#0a0014] py-20"
+      id="stories"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#ff0080]/5 via-transparent to-transparent"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -29,7 +51,8 @@ const BlogGrid = () => {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-[#ffb3d9]/80 max-w-2xl mx-auto">
-            Explore our collection of intimate stories designed to awaken your senses and ignite your imagination
+            Explore our collection of intimate stories designed to awaken your
+            senses and ignite your imagination
           </p>
         </div>
 
@@ -43,26 +66,28 @@ const BlogGrid = () => {
             >
               {/* Image Container */}
               <div className="relative overflow-hidden">
-                <img 
-                  src={blog.image} 
-                  alt={blog.title} 
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a001a] via-transparent to-transparent opacity-80"></div>
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-gradient-to-r from-[#ff0080] to-[#ff4da6] text-white text-xs font-bold rounded-full shadow-lg">
                     {blog.category}
                   </span>
                 </div>
-                
+
                 {/* Rating */}
                 <div className="absolute top-4 right-4 flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">
                   <span className="text-yellow-400 text-sm">⭐</span>
-                  <span className="text-white text-xs font-bold">{blog.rating}</span>
+                  <span className="text-white text-xs font-bold">
+                    {blog.rating}
+                  </span>
                 </div>
 
                 {/* Featured Badge */}
@@ -80,7 +105,7 @@ const BlogGrid = () => {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {blog.tags.map((tag, tagIndex) => (
-                    <span 
+                    <span
                       key={tagIndex}
                       className="px-2 py-1 bg-[#ff0080]/10 border border-[#ff0080]/20 text-[#ffb3d9] text-xs rounded-full"
                     >
@@ -105,7 +130,9 @@ const BlogGrid = () => {
                     {blog.author.charAt(0)}
                   </div>
                   <div className="flex-1">
-                    <p className="text-white text-sm font-medium">{blog.author}</p>
+                    <p className="text-white text-sm font-medium">
+                      {blog.author}
+                    </p>
                     <p className="text-[#ffb3d9]/60 text-xs">
                       {new Date(blog.publishedDate).toLocaleDateString()}
                     </p>
@@ -124,8 +151,8 @@ const BlogGrid = () => {
                       Hot
                     </span>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       handleReadMore(blog.slug);

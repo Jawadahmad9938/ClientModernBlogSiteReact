@@ -1,24 +1,45 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { blogs } from '../../data/blogs';
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { blogs } from "../../data/blogs";
 
 const BlogPost = () => {
   const router = useRouter();
   const { slug } = router.query;
+  const [adTriggered, setAdTriggered] = useState(false);
 
-  // Find the blog post by slug
-  const blog = blogs.find(b => b.slug === slug);
+  const blog = blogs.find((b) => b.slug === slug);
 
-  // If blog not found or still loading
+  useEffect(() => {
+    // Scroll-based popunder trigger
+    const handleScroll = () => {
+      if (!adTriggered && window.scrollY > 300) {
+        setAdTriggered(true);
+
+        // ✅ Popunder (new tab ad)
+        window.open("https://your-ad-link.com", "_blank", "noopener,noreferrer");
+
+        // ✅ Optional popup ad (instead of new tab)
+        // window.alert("Special offer! Visit our premium stories section 🔥");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [adTriggered]);
+
   if (!blog) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-[#0a0014] to-[#1a001a] flex items-center justify-center px-4">
         <div className="text-center">
           <div className="text-6xl mb-4">📖</div>
-          <h1 className="text-3xl font-bold text-[#ffb3d9] mb-4">Story Not Found</h1>
-          <p className="text-[#ffb3d9]/80 mb-8">This passionate tale seems to have wandered off...</p>
-          <button 
-            onClick={() => window.location.href = '/'}
+          <h1 className="text-3xl font-bold text-[#ffb3d9] mb-4">
+            Story Not Found
+          </h1>
+          <p className="text-[#ffb3d9]/80 mb-8">
+            This passionate tale seems to have wandered off...
+          </p>
+          <button
+            onClick={() => (window.location.href = "/")}
             className="px-6 py-3 bg-gradient-to-r from-[#ff0080] to-[#ff4da6] text-white font-bold rounded-full hover:scale-105 transition-transform duration-300"
           >
             Return to Stories
@@ -29,7 +50,7 @@ const BlogPost = () => {
   }
 
   const handleBackToStories = () => {
-    window.location.href = '/#stories';
+    window.location.href = "/#stories";
   };
 
   const handleRelatedStoryClick = (relatedSlug) => {
@@ -41,11 +62,13 @@ const BlogPost = () => {
       {/* Navigation */}
       <nav className="border-b border-[#ff0080]/20 py-4 backdrop-blur-lg bg-[#0a0014]/80 sticky top-0 z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <button 
+          <button
             onClick={handleBackToStories}
             className="flex items-center gap-2 text-[#ffb3d9] hover:text-[#ff0080] transition-all duration-300 group"
           >
-            <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">←</span>
+            <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">
+              ←
+            </span>
             <span className="font-semibold">Back to Stories</span>
           </button>
         </div>
@@ -53,101 +76,46 @@ const BlogPost = () => {
 
       {/* Blog Content */}
       <article className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
-        {/* Header */}
         <header className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ff0080]/20 to-[#ff4da6]/20 border border-[#ff0080]/30 rounded-full mb-6 backdrop-blur-sm">
-            <span className="text-[#ff0080] text-sm font-semibold">{blog.category}</span>
+            <span className="text-[#ff0080] text-sm font-semibold">
+              {blog.category}
+            </span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
             {blog.title}
           </h1>
-
-          {/* Meta Information */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-[#ffb3d9]/80 mb-8">
-            <div className="flex items-center gap-2">
-              <span className="w-8 h-8 bg-gradient-to-r from-[#ff0080] to-[#ff4da6] rounded-full flex items-center justify-center text-white text-sm font-bold">
-                {blog.author.charAt(0)}
-              </span>
-              <span className="font-medium">{blog.author}</span>
-            </div>
-            <div className="flex items-center gap-1 bg-[#ff0080]/10 px-3 py-1 rounded-full">
-              <span className="text-[#ff0080]">⏱️</span>
-              <span className="font-medium">{blog.readTime}</span>
-            </div>
-            <div className="flex items-center gap-1 bg-[#ff4da6]/10 px-3 py-1 rounded-full">
-              <span className="text-yellow-400">⭐</span>
-              <span className="font-medium">{blog.rating}</span>
-            </div>
-            <div className="flex items-center gap-1 bg-[#ff0080]/10 px-3 py-1 rounded-full">
-              <span className="text-[#ff4da6]">📅</span>
-              <span className="font-medium">{new Date(blog.publishedDate).toLocaleDateString()}</span>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {blog.tags.map((tag, index) => (
-              <span 
-                key={index}
-                className="px-3 py-1 bg-[#ff0080]/10 border border-[#ff0080]/20 text-[#ffb3d9] text-sm rounded-full font-medium"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
         </header>
 
         {/* Featured Image */}
         <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl border border-[#ff0080]/20">
-          <img 
-            src={blog.image} 
+          <img
+            src={blog.image}
             alt={blog.title}
-            className="w-full h-64 sm:h-80 lg:h-96 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0014] via-transparent to-transparent"></div>
-        </div>
-
-        {/* Blog Content */}
-        <div className="max-w-none">
-          <div 
-            className="text-[#ffb3d9] leading-relaxed text-lg"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
+            className="w-full h-80 object-cover"
           />
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 mt-12 pt-8 border-t border-[#ff0080]/20">
-          <button className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#ff0080] to-[#ff4da6] text-white font-bold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
-            <span className="group-hover:scale-110 transition-transform duration-300">❤️</span>
-            Save to Favorites
-          </button>
-          <button className="group flex items-center gap-2 px-6 py-3 bg-transparent text-[#ffb3d9] border border-[#ff0080]/50 rounded-full hover:bg-[#ff0080]/10 hover:border-[#ff0080] transition-all duration-300">
-            <span className="group-hover:scale-110 transition-transform duration-300">💬</span>
-            Leave Comment
-          </button>
-          <button className="group flex items-center gap-2 px-6 py-3 bg-transparent text-[#ffb3d9] border border-[#ff0080]/50 rounded-full hover:bg-[#ff0080]/10 hover:border-[#ff0080] transition-all duration-300">
-            <span className="group-hover:scale-110 transition-transform duration-300">📤</span>
-            Share Story
-          </button>
-        </div>
-      </article>
+        {/* Story Content */}
+        <div
+          className="text-[#ffb3d9] leading-relaxed text-lg space-y-6"
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
 
-      {/* Related Stories Section */}
-      <section className="border-t border-[#ff0080]/20 py-16 bg-gradient-to-b from-transparent to-[#0a0014]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Related Stories */}
+        <section className="border-t border-[#ff0080]/20 pt-16 mt-16">
           <h2 className="text-3xl font-black text-center mb-12">
             <span className="bg-gradient-to-r from-[#ff0080] via-[#ff4da6] to-[#ff0080] bg-clip-text text-transparent">
               More Passionate Stories
             </span>
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {blogs
-              .filter(b => b.slug !== slug)
+              .filter((b) => b.slug !== slug)
               .slice(0, 3)
-              .map(relatedBlog => (
-                <div 
+              .map((relatedBlog) => (
+                <div
                   key={relatedBlog.id}
                   className="group bg-gradient-to-br from-[#1a001a] to-[#330033] rounded-2xl p-6 border border-[#ff0080]/20 hover:border-[#ff0080]/40 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-[#ff0080]/20"
                   onClick={() => handleRelatedStoryClick(relatedBlog.slug)}
@@ -158,21 +126,11 @@ const BlogPost = () => {
                   <p className="text-[#ffb3d9]/70 text-sm mb-3 line-clamp-2">
                     {relatedBlog.excerpt}
                   </p>
-                  <div className="flex items-center justify-between text-xs text-[#ffb3d9]/50">
-                    <span className="flex items-center gap-1">
-                      <span>⏱️</span>
-                      {relatedBlog.readTime}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span>⭐</span>
-                      {relatedBlog.rating}
-                    </span>
-                  </div>
                 </div>
               ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </article>
     </div>
   );
 };
