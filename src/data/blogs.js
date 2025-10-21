@@ -71,11 +71,11 @@ export const blogs = [
         <p class="text-[#ffb3d9]">The space between them was electric, a silent promise of power, control, and something dangerously close to desire, setting the stage for what was to come.</p>
       </div>
     `,
-    image: "https://i.postimg.cc/QdNSjZ02/565696267-1499082547806549-6061296369666840500-n.jpg",
+    image: "https://i.postimg.cc/xTg1rzxV/565696267-1499082547806549-6061296369666840500-n.jpg",
     category: "Campus Politics",
     readTime: "18 min",
     rating: "4.9",
-    tags: ["Power Play", "Campus Romance", "Political Drama", "Ambition", "Seduction"],
+    tags: ["Campus Romance", "Political Drama", "Seduction"],
     author: "Suchi Goyal",
     publishedDate: "2024-01-15",
     featured: true
